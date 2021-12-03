@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d" Background="#FF1F1E1B" FontFamily="{DynamicResource PhilipsFontFamily}" FontSize="15" 
+        Title="PSC Configuration Editor" Height="550" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Philips.Platform.Presentation;component/ExperienceIdentity/ExperienceIdentity.Dark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <HierarchicalDataTemplate x:Key="treeViewTemplate"
+                                      DataType="{x:Type local:Directory}"
+                                      ItemsSource="{Binding Path=Children}">
+                <StackPanel>
+                    <Label  Name="NodeLabel">
+                        <Label.Content>
+                            <MultiBinding>
+                                <MultiBinding.Bindings>
+                                    <Binding Path="Name"></Binding>
+                                    <!--<Binding Path="ParameterValue"></Binding>-->
+                                </MultiBinding.Bindings>
+                                <MultiBinding.Converter>
+                                    <local:ParameterConverter></local:ParameterConverter>
+                                </MultiBinding.Converter>
+                            </MultiBinding>
+                        </Label.Content>
+                    </Label>
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+        
+    </Window.Resources>
+    <StackPanel>
+        <TreeView Height="380"
+                  Background="Transparent"                           
+                  ItemsSource="{Binding Path=TreeItemConfigData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItemChanged="TreeView_OnSelectedItemChanged"
+                  ItemTemplate="{StaticResource treeViewTemplate}" 
+                  BorderBrush="{x:Null}"></TreeView>
+        <Button Name="ImportBtn" Content="Import Selected" Width="auto" Click="ButtonBase_OnClick" IsEnabled="{Binding Path=CanEnableImport, Mode=OneWay}"></Button>
+        <Button Name="RestoreBtn" Content="Restore Previous" Width="auto" Click="RestoreBtn_OnClick" IsEnabled="{Binding Path=CanEnableRestore}"></Button>
+    </StackPanel>
+</Window>

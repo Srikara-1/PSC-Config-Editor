@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Directory>
+	<Name>PublicConfigurations</Name>
+	<Path>PublicConfigurations</Path>
+	<Directory>
+		<Name>Philips.ServiceTools.Rdp.Toolkit.dll.config</Name>
+		<Path>PublicConfigurations\Philips.ServiceTools.Rdp.Toolkit.dll.config</Path>
+		<IsEncryped>false</IsEncryped>
+	</Directory>
+	<Directory>
+		<Name>Philips.ServiceTools.Rdp.UIServerPlugin.dll.config</Name>
+		<Path>PublicConfigurations\Philips.ServiceTools.Rdp.UIServerPlugin.dll.config</Path>
+		<IsEncryped>false</IsEncryped>
+	</Directory>
+	<Directory>
+		<Name>ServiceTools</Name>
+		<Path>PublicConfigurations\ServiceConfigurations\ServiceTools</Path>
+		<Directory>
+			<Name>PluginConfigurationForTools.xml</Name>
+			<Path>PublicConfigurations\ServiceConfigurations\PluginConfigurationForTools.xml</Path>
+			<IsEncryped>false</IsEncryped>
+		</Directory>
+		<Directory>
+			<Name>AuditTrail</Name>
+			<Path>PublicConfigurations\ServiceConfigurations\AuditTrail</Path>
+			<IsEncryped>false</IsEncryped>
+			<Directory>
+				<Name>AuditTrailToolConfiguration.xml</Name>
+				<Path>PublicConfigurations\ServiceConfigurations\AuditTrailToolConfiguration.xml</Path>
+				<IsEncryped>false</IsEncryped>
+			</Directory>
+		</Directory>
+	</Directory>
+	<Directory>
+		<Name>ServiceConfiguration</Name>
+		<Path>PublicConfigurations\ServiceConfigurations</Path>
+		<Directory>
+			<Name>ServicePlatform</Name>
+			<Path>PublicConfigurations\ServicePlatform</Path>
+			<Directory>
+				<Name>Toolkit</Name>
+				<Path>PublicConfigurations\ServicePlatform\Toolkit</Path>
+			</Directory>
+			<Directory>
+				<Name>ToolMenu.xml</Name>
+				<Path>PublicConfigurations\ServicePlatform\Toolkit\ToolMenu.xml</Path>
+			</Directory>
+			<Directory>
+				<Name>ToolMetaData.xml</Name>
+				<Path>PublicConfigurations\ServicePlatform\Toolkit\ToolMetaData.xml</Path>
+			</Directory>
+		</Directory>
+
+	</Directory>
+</Directory>
